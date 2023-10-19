@@ -14,13 +14,37 @@ int main()
 	Mat img = imread(image_path, IMREAD_COLOR);*/
 	//cvtColor(img, grayImg, IMREAD_GRAYSCALE);
 
-	Mat grayImg = Mat::zeros(400, 450, CV_8U);
+	Mat grayImg = Mat::zeros(1000, 1000, CV_8U);
 
-	for (int i = 0; i < 200; ++i)
-		for (int j = 0; j < 200; ++j)
-			grayImg.at<uchar>(i, j) = Blanc;
-		
-	
+	//dessin du carré
+
+	for (int i = 40; i < 240; ++i)
+		grayImg.at<uchar>(i,40) = Blanc;
+
+
+	for (int j = 40; j < 240; ++j)
+			grayImg.at<uchar>(40,j) = Blanc;
+
+	for (int i = 40; i < 240; ++i)
+		grayImg.at<uchar>(i, 240) = Blanc;
+
+
+	for (int j = 40; j < 240; ++j)
+		grayImg.at<uchar>(240, j) = Blanc;
+
+
+	//dessin des diagonales
+
+	for (int i = 40, j = 40; i < 240 && j < 240; ++i, ++j)
+	{
+		grayImg.at<uchar>(i, j) = Blanc;
+	}
+
+	for (int i = 40, j = 240; i <= 240 && j >= 40; ++i, --j)
+	{
+		grayImg.at<uchar>(i, j) = Blanc;
+	}
+
 	imshow("Image en niveau de Gris", grayImg);
 	int k = waitKey(0); // Wait for a keystroke in the window
 	if (k == 's')
