@@ -8,7 +8,7 @@ using namespace cv;
 const uchar Noir = 0;
 const uchar Blanc = 255;
 
-Mat& ScanImageAndReduceIterator(Mat& image , int ligne, int colonne ,  const uchar* couleur);
+Mat& SetPixel(Mat& image , int ligne, int colonne ,  const uchar couleur);
 
 
 

@@ -3,6 +3,9 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <iostream>
+#include "Header.h"
+
+
 using namespace cv;
 int main()
 {
@@ -19,30 +22,31 @@ int main()
 	//dessin du carré
 
 	for (int i = 40; i < 240; ++i)
-		grayImg.at<uchar>(i,40) = Blanc;
+		SetPixel(grayImg, i, 40, Blanc);
+		//grayImg.at<uchar>(i,40) = Blanc;
 
 
 	for (int j = 40; j < 240; ++j)
-			grayImg.at<uchar>(40,j) = Blanc;
+		SetPixel(grayImg, 40, j, Blanc);
 
 	for (int i = 40; i < 240; ++i)
-		grayImg.at<uchar>(i, 240) = Blanc;
+		SetPixel(grayImg, i, 240, Blanc);
 
 
 	for (int j = 40; j < 240; ++j)
-		grayImg.at<uchar>(240, j) = Blanc;
+		SetPixel(grayImg, 240, j, Blanc);
 
 
 	//dessin des diagonales
 
 	for (int i = 40, j = 40; i < 240 && j < 240; ++i, ++j)
 	{
-		grayImg.at<uchar>(i, j) = Blanc;
+		SetPixel(grayImg, i, j, Blanc);
 	}
 
 	for (int i = 40, j = 240; i <= 240 && j >= 40; ++i, --j)
 	{
-		grayImg.at<uchar>(i, j) = Blanc;
+		SetPixel(grayImg, i, j, Blanc);
 	}
 
 	imshow("Image en niveau de Gris", grayImg);
