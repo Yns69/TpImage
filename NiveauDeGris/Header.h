@@ -9,6 +9,7 @@ const uchar Noir = 0;
 const uchar Blanc = 255;
 
 Mat& SetPixel(Mat& image , int ligne, int colonne ,  const uchar couleur);
-
+Mat& setPixelIterator(Mat& image, int ligne, int colonne, const uchar couleur);
+Mat& setPixelPtr(Mat& image, int ligne, int colonne, const uchar couleur);
 
 

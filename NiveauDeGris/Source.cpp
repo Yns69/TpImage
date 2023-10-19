@@ -22,33 +22,45 @@ int main()
 	//dessin du carré
 
 	for (int i = 40; i < 240; ++i)
-		SetPixel(grayImg, i, 40, Blanc);
+		setPixelPtr(grayImg, i, 40, Blanc);
+		//setPixelIterator(grayImg, i, 40, Blanc);
+		//SetPixel(grayImg, i, 40, Blanc);
 		//grayImg.at<uchar>(i,40) = Blanc;
 
 
 	for (int j = 40; j < 240; ++j)
-		SetPixel(grayImg, 40, j, Blanc);
+		setPixelPtr(grayImg, 40, j, Blanc);
+		//setPixelIterator(grayImg, 40, j, Blanc);
+		//SetPixel(grayImg, 40, j, Blanc);
 
 	for (int i = 40; i < 240; ++i)
-		SetPixel(grayImg, i, 240, Blanc);
+		setPixelPtr(grayImg, i, 240, Blanc);
+		//setPixelIterator(grayImg, i, 240, Blanc);
+		//SetPixel(grayImg, i, 240, Blanc);
 
 
 	for (int j = 40; j < 240; ++j)
-		SetPixel(grayImg, 240, j, Blanc);
+		setPixelPtr(grayImg, 240, j, Blanc);
+		//setPixelIterator(grayImg, 240, j, Blanc);
+		//SetPixel(grayImg, 240, j, Blanc);
 
 
 	//dessin des diagonales
 
 	for (int i = 40, j = 40; i < 240 && j < 240; ++i, ++j)
 	{
-		SetPixel(grayImg, i, j, Blanc);
+		setPixelPtr(grayImg, i, j, Blanc);
+		//setPixelIterator(grayImg, i,j , Blanc);
+		//SetPixel(grayImg, i, j, Blanc);
 	}
 
 	for (int i = 40, j = 240; i <= 240 && j >= 40; ++i, --j)
 	{
-		SetPixel(grayImg, i, j, Blanc);
+		setPixelPtr(grayImg, i, j, Blanc);
+		//setPixelIterator(grayImg, i, j, Blanc);
+		//SetPixel(grayImg, i, j, Blanc);
 	}
-
+	
 	imshow("Image en niveau de Gris", grayImg);
 	int k = waitKey(0); // Wait for a keystroke in the window
 	if (k == 's')
